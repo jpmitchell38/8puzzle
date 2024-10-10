@@ -1,3 +1,5 @@
+import random
+
 class Puzzle:
     def __init__(self, state):
         self.state = state
@@ -31,3 +33,18 @@ class Puzzle:
         for row in self.state:
             print(row)
         print()
+        
+    def count_inversions(self):
+        flat_state = [tile for row in self.state for tile in row if tile != 0] 
+        inversions = sum(1 for i in range(len(flat_state)) for j in range(i + 1, len(flat_state)) if flat_state[i] > flat_state[j])
+        return inversions
+
+    def is_solvable(self):
+        return self.count_inversions() % 2 == 0
+    
+def generate_random_initial_state():
+    numbers = list(range(9)) 
+    random.shuffle(numbers)  
+
+    return [numbers[i:i + 3] for i in range(0, 9, 3)]
+        
