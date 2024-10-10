@@ -1,4 +1,3 @@
-from puzzle import Puzzle
 import heapq
 
 def manhattan_heuristic(state, goal_state):

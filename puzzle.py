@@ -31,8 +31,8 @@ class Puzzle:
 
     def display(self):
         for row in self.state:
-            print(row)
-        print()
+            print(" ".join(str(x) if x != 0 else " " for x in row)) 
+        # print("\n" + "-"*10)
         
     def count_inversions(self):
         flat_state = [tile for row in self.state for tile in row if tile != 0] 
