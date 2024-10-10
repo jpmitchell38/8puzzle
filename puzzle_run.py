@@ -4,6 +4,11 @@ from puzzle import Puzzle, generate_random_initial_state
 from astar import *
 
 if __name__ == "__main__":
+    # A* - Completed
+    #BFS - 
+    #DPS - 
+    #Greedy - 
+    #UCS - 
     print("\n\n")
     parser = argparse.ArgumentParser(description="8-puzzle solver")
     parser.add_argument("-a", action="store_true", help="Display full A* solution steps")
@@ -27,12 +32,13 @@ if __name__ == "__main__":
     
     # Display the full A* solution steps if -a is set
     if args.a:
-        print("\nSolution Path:")
+        print("\n \n" + "-"*10) 
+        print("Solution Path to A*:")
         for i, state in enumerate(result):
-            print(f"Step {i}:")
+            print(f"\nStep {i}:")
             for row in state:
                 print(" ".join(str(x) if x != 0 else " " for x in row)) 
-            print("\n" + "-"*10) 
+        print("-"*10) 
     else:        
         print("\nFinal State:")
         final_state = result[-1]
