@@ -42,6 +42,13 @@ class Puzzle:
     def is_solvable(self):
         return self.count_inversions() % 2 == 0
     
+    def __eq__(self, other):
+        return isinstance(other, Puzzle) and self.state == other.state
+
+    def __hash__(self):
+        # Ensure that the state is immutable and hashable (e.g., converting lists to tuples)
+        return hash(tuple(tuple(row) for row in self.state))
+    
 def generate_random_initial_state():
     numbers = list(range(9)) 
     random.shuffle(numbers)  

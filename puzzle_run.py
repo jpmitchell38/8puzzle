@@ -2,16 +2,19 @@ import argparse
 
 from puzzle import Puzzle, generate_random_initial_state
 from astar import *
+from bfs import *
 
 if __name__ == "__main__":
     # A* - Completed
-    #BFS - 
+    #BFS - Completed
     #DPS - 
     #Greedy - 
     #UCS - 
     print("\n\n")
     parser = argparse.ArgumentParser(description="8-puzzle solver")
     parser.add_argument("-a", action="store_true", help="Display full A* solution steps")
+    # parser.add_argument("-b", action="store_true", help="Display every 10000 BFS solution steps")
+
     
     args = parser.parse_args()
     
@@ -46,6 +49,23 @@ if __name__ == "__main__":
             print(" ".join(str(x) if x != 0 else " " for x in row)) 
         # print("\n" + "-"*10)
         
-        print("\nA* number of steps to complete:", step_count)
+    print("\nA* number of steps to complete:", step_count)
+        
+    # BFS algorithm
+    # result = bfs(puzzle, display_steps=args.b) 
+    result = bfs(puzzle) 
+    step_count1, solution_path = result 
+
+    # if args.b:
+    #     pass
+    # else:    
+    #     pass    
+    #     # print("\nFinal State:")
+    #     # final_state = solution_path[-1]  
+    #     # for row in final_state.state:  
+    #     #     print(" ".join(str(x) if x != 0 else " " for x in row)) 
+    #     # print("\n" + "-" * 10)
+            
+    print("BFS number of steps to complete:", step_count1)
         
     
