@@ -21,7 +21,7 @@ Path
 Standard run screenshot
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-    <img src="docs/Screenshot 2024-10-16 170055.png" alt="Graph 1" style="width: 25%; margin-bottom: 10px;" />
+    <img src="docs/Screenshot 2024-10-16 170055.png" alt="Graph 1" style="width: 35%; margin-bottom: 10px;" />
 </div>
 
 A* path run screenshot
